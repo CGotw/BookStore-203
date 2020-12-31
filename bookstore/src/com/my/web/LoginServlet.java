@@ -23,12 +23,15 @@ public class LoginServlet extends HttpServlet {
         User loginUser = userService.login(new User(null, username, password, null));
         // 如果等于null,说明登录 失败!
         if (loginUser == null) {
+//            把错误信息和回显的信息宝墩到request域中
+            req.setAttribute("msg","用户名和密码错误");
+            req.setAttribute("username",username);
             //   跳回登录页面
-            req.getRequestDispatcher("/pages/user/login.html").forward(req, resp);
+            req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
         } else {
             // 登录 成功
             //跳到成功页面login_success.html
-            req.getRequestDispatcher("/pages/user/login_success.html").forward(req, resp);
+            req.getRequestDispatcher("/pages/user/login_success.jsp").forward(req, resp);
         }
     }
 }

@@ -10,14 +10,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class RigestServlet extends HttpServlet {
-
+public class UserServlet extends HttpServlet {
     private UserService userService = new UserServiceImpl();
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void login(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //  1、获取请求的参数
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        // 调用 userService.login()登录处理业务
+        User loginUser = userService.login(new User(null, username, password, null));
+        // 如果等于null,说明登录 失败!
+        if (loginUser == null) {
+//            把错误信息和回显的信息宝墩到request域中
+            req.setAttribute("msg","用户名和密码错误");
+            req.setAttribute("username",username);
+            //   跳回登录页面
+            req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
+        } else {
+            // 登录 成功
+            //跳到成功页面login_success.html
+            req.getRequestDispatcher("/pages/user/login_success.jsp").forward(req, resp);
+        }
+    }
 
-//      1、获取请求的参数
+
+    protected void regist(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //      1、获取请求的参数
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String email = req.getParameter("email");
@@ -39,9 +57,9 @@ public class RigestServlet extends HttpServlet {
             } else {
 //                可用
 //                调用Service保存到数据库
-                  userService.registUser(new User(null, username, password, email));
+                userService.registUser(new User(null, username, password, email));
 //                跳到注册成功页面 regist_success.jsp
-                  req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
+                req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
             }
         } else {
             // 把回显信息保存到request域中
@@ -52,7 +70,15 @@ public class RigestServlet extends HttpServlet {
             req.getRequestDispatcher("/pages/user/regist.jsp").forward(req, resp);
         }
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String action=req.getParameter("action");
+        System.out.println(action);
+        if(action.equals("login")){
+            login(req, resp);
+        }else if(action.equals("regist")){
+            regist(req, resp);
+        }
+    }
 }
-
-
-
