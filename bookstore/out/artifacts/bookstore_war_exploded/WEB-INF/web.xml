@@ -4,30 +4,37 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet>
-        <servlet-name>RigestServlet</servlet-name>
-        <servlet-class>com.my.web.RigestServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RigestServlet</servlet-name>
-        <url-pattern>/registServlet</url-pattern>
-    </servlet-mapping>
 
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.my.web.LoginServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/loginServlet</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>UserServlet</servlet-name>
+        <servlet-name>userServlet</servlet-name>
         <servlet-class>com.my.web.UserServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>UserServlet</servlet-name>
+        <servlet-name>userServlet</servlet-name>
         <url-pattern>/userServlet</url-pattern>
     </servlet-mapping>
+
+
+
+    <servlet>
+        <servlet-name>BookServlet</servlet-name>
+        <servlet-class>com.my.web.BookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookServlet</servlet-name>
+        <url-pattern>/manager/bookServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ClientBookServlet</servlet-name>
+        <servlet-class>com.my.web.ClientBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClientBookServlet</servlet-name>
+        <url-pattern>/client/bookServlet</url-pattern>
+    </servlet-mapping>
+
+
+
 </web-app>
