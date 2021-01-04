@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="BookStoresGit">
+    <output-path>$PROJECT_DIR$/out/artifacts/BookStoresGit</output-path>
+    <root id="root">
+      <element id="archive" name="BookStoresGit.jar">
+        <element id="module-output" name="BookStoresGit" />
+      </element>
+    </root>
+  </artifact>
+</component>
