@@ -35,6 +35,7 @@ public class UserServlet extends BaseServlet {
             req.setAttribute("msg", "用户或密码错误！");
             req.setAttribute("username", username);
             //   跳回登录页面
+            req.getSession().setAttribute("user", loginUser);
             req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
         } else {
             // 登录 成功
@@ -80,7 +81,8 @@ public class UserServlet extends BaseServlet {
 //                调用Sservice保存到数据库
                 userService.registUser(new User(null, username, password, email));
 //
-//        跳到注册成功页面 regist_success.jsp
+//              跳到注册成功页面 regist_success.jsp
+
                 req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
             }
         } else {

@@ -8,15 +8,15 @@
 	<%@ include file="/pages/common/head.jsp"%>
 </head>
 <body>
-		<div id="login_header">
-			<img class="logo_img" alt="" src="static/img/logo.gif" >
-		</div>
+<%--		<div id="login_header">--%>
+<%--			<img class="logo_img" alt="" src="static/img/logo.gif" >--%>
+<%--		</div>--%>
 		
 			<div class="login_banner">
 			
-				<div id="l_content">
-					<span class="login_word">欢迎登录</span>
-				</div>
+<%--				<div id="l_content">--%>
+<%--					<span class="login_word">欢迎登录</span>--%>
+<%--				</div>--%>
 				
 				<div id="content">
 					<div class="login_form">
