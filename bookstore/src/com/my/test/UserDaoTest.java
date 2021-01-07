@@ -24,6 +24,6 @@ public class UserDaoTest {
     @Test
     public void saveUser() {
         UserDao userDao=new UserDaoImpl();
-        System.out.println(userDao.saveUser(new User(null,"li","lilili","sf@com")));
+        System.out.println(userDao.saveUser(new User(null,"liasdf","lilili","sf@com")));
     }
 }
