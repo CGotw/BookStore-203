@@ -12,7 +12,7 @@
 
 			// 验证码的单击图片绑定单击事件
 			$("#code_img").click(function () {
-				alert("${basePath}/kaptcha.jpg")
+				<%--alert("${basePath}/kaptcha.jpg")--%>
 				this.src="${basePath}/kaptcha.jpg";
 			})
 
