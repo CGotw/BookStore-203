@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>尚硅谷会员注册页面</title>
-<%--	静态包含，base标签，css按时，jQuery--%>
+	<title>Login</title>
+    <%@ include file="/pages/common/css_img.jsp"%>
 	<%@ include file="/pages/common/head.jsp"%>
 	<script type="text/javascript">
 		// 页面加载完成之后
@@ -87,10 +86,9 @@
 				$("span.errorMsg").text("");
 
 			});
-
 		});
-
 	</script>
+
 	<style type="text/css">
 		.login_form{
 			height:420px;
@@ -99,67 +97,221 @@
 
 	</style>
 </head>
-<body>
-<div id="login_header">
-	<img class="logo_img" alt="" src="static/img/logo.gif" >
-</div>
 
-<div class="login_banner">
+<body class="inblog-page">
+    <header class="header style7">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <div class="header-message">
+                        注册
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-header">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-4 col-md-3 col-xs-7 col-ts-12 header-element">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="pages/assets/images/logo.png" alt="img" height="120" width="300" style="margin-left:70px">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-sm-8 col-md-6 col-xs-5 col-ts-12">
+                        <div class="block-search-block">
+                            <div class="form-content">
+                                <div class="inner"><br/><br/>
+                                    <font size=12>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;书籍——举世之宝</font>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-	<div id="l_content">
-		<span class="login_word">欢迎注册</span>
-	</div>
+    <div class="header-device-mobile">
+        <div class="wapper">
+            <div class="item mobile-logo">
+                <div class="logo">
+                    <a href="#">
+                        <img src="pages/assets/images/logo.png" alt="img">
+                    </a>
+                </div>
+            </div>
+            <div class="item item mobile-search-box has-sub">
+                <a href="#">
+						<span class="icon">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</span>
+                </a>
+                <div class="block-sub">
+                    <a href="#" class="close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                    <div class="header-searchform-box">
+                        <form class="header-searchform">
+                            <div class="searchform-wrap">
+                                <input type="text" class="search-input" placeholder="Enter keywords to search...">
+                                <input type="submit" class="submit button" value="Search">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="item mobile-settings-box has-sub">
+                <a href="#">
+						<span class="icon">
+							<i class="fa fa-cog" aria-hidden="true"></i>
+						</span>
+                </a>
+                <div class="block-sub">
+                    <a href="#" class="close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                    <div class="block-sub-item">
+                        <h5 class="block-item-title">Currency</h5>
+                        <form class="currency-form teamo-language">
+                            <ul class="teamo-language-wrap">
+                                <li class="active">
+                                    <a href="#">
+											<span>
+												English (USD)
+											</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span>
+												French (EUR)
+											</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span>
+												Japanese (JPY)
+											</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="item menu-bar">
+                <a class=" mobile-navigation  menu-toggle" href="#">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
 
-	<div id="content">
-		<div class="login_form">
-			<div class="login_box">
-				<div class="tit">
-					<h1>注册尚硅谷会员</h1>
-					<span class="errorMsg">
-						<%=request.getAttribute("msg")==null?"":request.getAttribute("msg")%>
-					</span>
+	<div class="main-content main-content-login">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb-trail breadcrumbs">
+						<ul class="trail-items breadcrumb">
+							<li class="trail-item trail-begin">
+
+							</li>
+						</ul>
+					</div>
 				</div>
-				<div class="form">
-					<form action="userServlet" method="post">
-						<input type="hidden" name="action" value="regist">
-						<label>用户名称：</label>
-						<input class="itxt" type="text" placeholder="请输入用户名"
-							   autocomplete="off" tabindex="1" name="username" id="username"
-								value="<%=request.getAttribute("username")==null?"":request.getAttribute("username")%>"
-						/>
-						<br />
-						<br />
-						<label>用户密码：</label>
-						<input class="itxt" type="password" placeholder="请输入密码"
-							   autocomplete="off" tabindex="1" name="password" id="password" />
-						<br />
-						<br />
-						<label>确认密码：</label>
-						<input class="itxt" type="password" placeholder="确认密码"
-							   autocomplete="off" tabindex="1" name="repwd" id="repwd" />
-						<br />
-						<br />
-						<label>电子邮件：</label>
-						<input class="itxt" type="text" placeholder="请输入邮箱地址"
-							   autocomplete="off" tabindex="1" name="email" id="email"
-							   value="<%=request.getAttribute("email")==null?"":request.getAttribute("email")%>"
-						/>
-						<br />
-						<br />
-						<label>验证码：</label>
-						<input class="itxt" type="text" style="width: 150px;" name="code" id="code"/>
-						<img alt="" id="code_img" src="kaptcha.jpg" style="float: right; margin-right: 40px">
-						<br />
-						<br />
-						<input type="submit" value="注册" id="sub_btn" />
-					</form>
-				</div>
+			</div>
+			<div class="row">
+				<div class="content-area col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="site-main">
+						<h3 class="custom_blog_title">
+							Authentication
+						</h3>
+						<div class="customer_login">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-12">
+									<div class="login-item">
+										<div class="tit">
+											<h5 class="title-login">Register Now</h5>
+										</div>
+										<div class="msg_cont">
+											<b></b>
+											<span class="errorMsg">
+												&nbsp&nbsp
+												&nbsp&nbsp
+												&nbsp&nbsp
+												&nbsp&nbsp
+												<%=request.getAttribute("msg")==null?" ":request.getAttribute("msg")%>
+											</span>
+										</div>
 
+										<form class="login" action="userServlet" method="post">
+											<input type="hidden" name="action" value="regist">
+											<p class="form-row form-row-wide">
+												<label class="text">Username</label>
+												<input class="itxt" type="text" tabindex="1" name="username"
+													   value="<%=request.getAttribute("username")==null?"":request.getAttribute("username")%>"/>
+											</p>
+											<p class="form-row form-row-wide">
+												<label class="text">Password</label>
+												<input class="itxt" type="password" tabindex="1" name="password" id="password"/>
+											</p>
+											<p class="form-row form-row-wide">
+												<label class="text">Confirm Password</label>
+												<input class="itxt" type="password"
+													   tabindex="1" name="repwd" id="repwd" />
+											</p>
+											<p class="form-row form-row-wide">
+												<label class="text">E-mail</label>
+												<input class="itxt" type="text"
+													   tabindex="1" name="email" id="email"
+													   value="<%=request.getAttribute("email")==null?"":request.getAttribute("email")%>" />
+											</p>
+											<p class="form-row form-row-wide">
+												<label class="text">Captcha</label>
+												<input class="itxt" type="text" style="width: 150px;" name="code" id="code" />
+												<img alt="" id="code_img" src="kaptcha.jpg" style="float: right; margin-right: 40px">
+											</p>
+											<p class="form-row">
+												<input type="submit" value="register" id="sub_btn" />
+											</p>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<%--	静态包含页脚内容--%>
-<%@include file="/pages/common/footer.jsp"%>
+
+	<a href="#" class="backtotop">
+		<i class="fa fa-angle-double-up"></i>
+	</a>
+	<script src="pages/assets/js/jquery-1.12.4.min.js"></script>
+	<script src="pages/assets/js/jquery.plugin-countdown.min.js"></script>
+	<script src="pages/assets/js/jquery-countdown.min.js"></script>
+	<script src="pages/assets/js/bootstrap.min.js"></script>
+	<script src="pages/assets/js/owl.carousel.min.js"></script>
+	<script src="pages/assets/js/magnific-popup.min.js"></script>
+	<script src="pages/assets/js/isotope.min.js"></script>
+	<script src="pages/assets/js/jquery.scrollbar.min.js"></script>
+	<script src="pages/assets/js/jquery-ui.min.js"></script>
+	<script src="pages/assets/js/mobile-menu.js"></script>
+	<script src="pages/assets/js/chosen.min.js"></script>
+	<script src="pages/assets/js/slick.js"></script>
+	<script src="pages/assets/js/jquery.elevateZoom.min.js"></script>
+	<script src="pages/assets/js/jquery.actual.min.js"></script>
+	<script src="pages/assets/js/fancybox/source/jquery.fancybox.js"></script>
+	<script src="pages/assets/js/lightbox.min.js"></script>
+	<script src="pages/assets/js/owl.thumbs.min.js"></script>
+	<script src="pages/assets/js/jquery.scrollbar.min.js"></script>
+	<script src="pages/assets/js/frontend-plugin.js"></script>
+
 </body>
 </html>
