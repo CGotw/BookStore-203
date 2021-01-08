@@ -185,25 +185,7 @@
 	<a href="#" class="backtotop">
 		<i class="fa fa-angle-double-up"></i>
 	</a>
-	<script src="pages/assets/js/jquery-1.12.4.min.js"></script>
-	<script src="pages/assets/js/jquery.plugin-countdown.min.js"></script>
-	<script src="pages/assets/js/jquery-countdown.min.js"></script>
-	<script src="pages/assets/js/bootstrap.min.js"></script>
-	<script src="pages/assets/js/owl.carousel.min.js"></script>
-	<script src="pages/assets/js/magnific-popup.min.js"></script>
-	<script src="pages/assets/js/isotope.min.js"></script>
-	<script src="pages/assets/js/jquery.scrollbar.min.js"></script>
-	<script src="pages/assets/js/jquery-ui.min.js"></script>
-	<script src="pages/assets/js/mobile-menu.js"></script>
-	<script src="pages/assets/js/chosen.min.js"></script>
-	<script src="pages/assets/js/slick.js"></script>
-	<script src="pages/assets/js/jquery.elevateZoom.min.js"></script>
-	<script src="pages/assets/js/jquery.actual.min.js"></script>
-	<script src="pages/assets/js/fancybox/source/jquery.fancybox.js"></script>
-	<script src="pages/assets/js/lightbox.min.js"></script>
-	<script src="pages/assets/js/owl.thumbs.min.js"></script>
-	<script src="pages/assets/js/jquery.scrollbar.min.js"></script>
-	<script src="pages/assets/js/frontend-plugin.js"></script>
+
 
 </body>
 </html>
