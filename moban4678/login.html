@@ -23,6 +23,8 @@
 	<link rel="stylesheet" href="assets/css/mobile-menu.css">
 	<link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<%--	静态包含，base标签，css按时，jQuery--%>
+	<%@ include file="/pages/common/head.jsp"%>
 </head>
 <body class="inblog-page">
 	<header class="header style7">
@@ -42,7 +44,7 @@
 								</span>
 							</a>
 							<ul class="teamo-submenu">
-			f					<li class="switcher-option">
+								<li class="switcher-option">
 									<a href="#">
 										<span>
 											French (EUR)
@@ -73,7 +75,7 @@
 					<div class="col-lg-3 col-sm-4 col-md-3 col-xs-7 col-ts-12 header-element">
 						<div class="logo">
 							<a href="index.html">
-								<img src="assets/images/logo.png" alt="img" height="120" width="120" style="margin-left:70px">
+								<img src="assets/images/logo.png" alt="img">
 							</a>
 						</div>
 					</div>
@@ -459,10 +461,9 @@
 					<div class="breadcrumb-trail breadcrumbs">
 						<ul class="trail-items breadcrumb">
 							<li class="trail-item trail-begin">
-								<a href="index.html">Home</a>
+								<a href="index.html"></a>
 							</li>
 							<li class="trail-item trail-end active">
-								Authentication
 							</li>
 						</ul>
 					</div>
@@ -478,58 +479,28 @@
 							<div class="row">
 								<div class="col-lg-6 col-md-6 col-sm-12">
 									<div class="login-item">
-										<h5 class="title-login">Login your Account</h5>
+										<div class="tit">
+											<h5 class="title-login">Login your Account</h5>
+											<a href="pages/user/regist.jsp">Register now</a>
+										</div>
+										<div class="msg_cont">
+											<b></b>
+											<span class="errorMsg">
+												<%=request.getAttribute("msg")==null?"请输入用户名和密码":request.getAttribute("msg")%>
+											</span>
+										</div>
 										<form class="login">
-
+											
 											<p class="form-row form-row-wide">
 												<label class="text">Username</label>
-												<input title="username" type="text" class="input-text">
+												<input title="username" type="text" class="input-text" placeholder="请输入用户名" autocomplete="off" tabindex="1" name="username" value="<%=request.getAttribute("username")==null?"":request.getAttribute("username")%>"/>
 											</p>
 											<p class="form-row form-row-wide">
 												<label class="text">Password</label>
-												<input title="password" type="password" class="input-text">
-											</p>
-											<p class="lost_password">
-												<span class="inline">
-													<input type="checkbox" id="cb1">
-													<label for="cb1" class="label-text">Remember me</label>
-												</span>
+												<input title="password" type="password" class="input-text" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password" />
 											</p>
 											<p class="form-row">
-												<input type="submit" class="button-submit" value="login">
-											</p>
-										</form>
-									</div>
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-12">
-									<div class="login-item">
-										<h5 class="title-login">Register now</h5>
-										<form class="register">
-											<p class="form-row form-row-wide">
-												<label class="text">Your email</label>
-												<input title="email" type="email" class="input-text">
-											</p>
-											<p class="form-row form-row-wide">
-												<label class="text">Username</label>
-												<input title="name" type="text" class="input-text">
-											</p>
-											<p class="form-row form-row-wide">
-												<label class="text">Password</label>
-												<input title="pass" type="password" class="input-text">
-											</p>
-											<p class="form-row form-row-wide">
-												<label class="text">CAPTCHA</label>
-												<input title="pass" type="text" class="input-text" style="..." id="code"/></br>
-												<img alt="" src="kaptcha.jpg" style="..."></br>
-											</p>
-											<p class="form-row">
-												<span class="inline">
-													<input type="checkbox" id="cb2">
-													<label for="cb2" class="label-text">I agree to <span>Terms & Conditions</span></label>
-												</span>
-											</p>
-											<p class="">
-												<input type="submit" class="button-submit" value="Register Now">
+												<input type="submit" value="login" id="sub_btn" />
 											</p>
 										</form>
 									</div>
@@ -541,7 +512,114 @@
 			</div>
 		</div>
 	</div>
-
+	<footer class="footer style7">
+		<div class="container">
+			<div class="container-wapper">
+				<div class="row">
+					<div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-sm hidden-md hidden-lg">
+						<div class="teamo-newsletter style1">
+							<div class="newsletter-head">
+								<h3 class="title">Newsletter</h3>
+							</div>
+							<div class="newsletter-form-wrap">
+								<div class="list">
+									Sign up for our free video course and <br/> urban garden inspiration
+								</div>
+								<input type="email" class="input-text email email-newsletter"
+									   placeholder="Your email letter">
+								<button class="button btn-submit submit-newsletter">SUBSCRIBE</button>
+							</div>
+						</div>
+					</div>
+					<div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div class="teamo-custommenu default">
+							<h2 class="widgettitle">Quick Menu</h2>
+							<ul class="menu">
+								<li class="menu-item">
+									<a href="#">New arrivals</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Life style</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Cacti</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Palms</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Ferns</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs">
+						<div class="teamo-newsletter style1">
+							<div class="newsletter-head">
+								<h3 class="title">Newsletter</h3>
+							</div>
+							<div class="newsletter-form-wrap">
+								<div class="list">
+									Sign up for our free video course and <br/> urban garden inspiration
+								</div>
+								<input type="email" class="input-text email email-newsletter"
+									   placeholder="Your email letter">
+								<button class="button btn-submit submit-newsletter">SUBSCRIBE</button>
+							</div>
+						</div>
+					</div>
+					<div class="box-footer col-xs-12 col-sm-4 col-md-4 col-lg-4">
+						<div class="teamo-custommenu default">
+							<h2 class="widgettitle">Information</h2>
+							<ul class="menu">
+								<li class="menu-item">
+									<a href="#">FAQs</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Track Order</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Delivery</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Contact Us</a>
+								</li>
+								<li class="menu-item">
+									<a href="#">Return</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="footer-end">
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<div class="teamo-socials">
+								<ul class="socials">
+									<li>
+										<a href="#" class="social-item" target="_blank">
+											<i class="icon fa fa-facebook"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="social-item" target="_blank">
+											<i class="icon fa fa-twitter"></i>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="social-item" target="_blank">
+											<i class="icon fa fa-instagram"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="coppyright">Copyright &copy; 2020.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<div class="footer-device-mobile">
 		<div class="wapper">
 			<div class="footer-device-mobile-item device-home">
@@ -604,5 +682,7 @@
 	<script src="assets/js/jquery.scrollbar.min.js"></script>
 	<script src='https://ditu.google.cn/maps/api/js?key=AIzaSyC3nDHy1dARR-Pa_2jjPCjvsOR4bcILYsM'></script>
 	<script src="assets/js/frontend-plugin.js"></script>
+	<%--	静态包含页脚内容 --%>
+	<%@include file="/pages/common/footer.jsp"%>
 </body>
 </html>
