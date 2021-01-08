@@ -23,14 +23,12 @@ public class UserServlet extends BaseServlet {
      * @throws ServletException
      * @throws IOException
      */
-    protected void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-
-        // 销毁
+    protected void logout(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        1、销毁Session中用户登录的信息（或者销毁Session）
         req.getSession().invalidate();
-        // 重定向到首页
+//        2、重定向到首页（或登录页面）。
         resp.sendRedirect(req.getContextPath());
     }
-
     /**
      * 处理登录的功能
      *
@@ -46,18 +44,16 @@ public class UserServlet extends BaseServlet {
         String password = req.getParameter("password");
         // 调用 userService.login()登录处理业务
         User loginUser = userService.login(new User(null, username, password, null));
-        System.out.println(loginUser.getUsername());
         // 如果等于null,说明登录 失败!
         if (loginUser == null) {
             // 把错误信息，和回显的表单项信息，保存到Request域中
             req.setAttribute("msg", "用户或密码错误！");
+            req.setAttribute("username", username);
             //   跳回登录页面
-            req.getSession().setAttribute("user", loginUser);
             req.getRequestDispatcher("/pages/user/login.jsp").forward(req, resp);
         } else {
             // 登录 成功
-
-            //   跳回登录页面
+            // 保存用户登录的信息到Session域中
             req.getSession().setAttribute("user", loginUser);
             //跳到成功页面login_success.html
             req.getRequestDispatcher("/pages/user/login_success.jsp").forward(req, resp);
@@ -74,10 +70,9 @@ public class UserServlet extends BaseServlet {
      * @throws IOException
      */
     protected void regist(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         // 获取Session中的验证码
-        String token=(String) req.getSession().getAttribute(KAPTCHA_SESSION_KEY);
-        // 删除Session中的验证码
+        String token = (String) req.getSession().getAttribute(KAPTCHA_SESSION_KEY);
+        // 删除 Session中的验证码
         req.getSession().removeAttribute(KAPTCHA_SESSION_KEY);
 
         //  1、获取请求的参数
@@ -87,10 +82,9 @@ public class UserServlet extends BaseServlet {
         String code = req.getParameter("code");
 
         User user = WebUtils.copyParamToBean(req.getParameterMap(), new User());
-        System.out.println(token);
 
 //        2、检查 验证码是否正确  === 写死,要求验证码为:abcde
-        if (token!=null&&token.equalsIgnoreCase(code)) {
+        if (token!=null && token.equalsIgnoreCase(code)) {
 //        3、检查 用户名是否可用
             if (userService.exitUsername(username)) {
                 System.out.println("用户名[" + username + "]已存在!");
@@ -107,8 +101,7 @@ public class UserServlet extends BaseServlet {
 //                调用Sservice保存到数据库
                 userService.registUser(new User(null, username, password, email));
 //
-//              跳到注册成功页面 regist_success.jsp
-
+//        跳到注册成功页面 regist_success.jsp
                 req.getRequestDispatcher("/pages/user/regist_success.jsp").forward(req, resp);
             }
         } else {
