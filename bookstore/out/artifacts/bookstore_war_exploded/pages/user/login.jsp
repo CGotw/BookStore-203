@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<title>Login</title>
-    <%@ include file="/pages/common/css_img.jsp"%>
+
 	<%@ include file="/pages/common/head.jsp"%>
 </head>
 <body class="inblog-page">
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-sm-4 col-md-3 col-xs-7 col-ts-12 header-element">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="index.jsp">
                                 <img src="pages/assets/images/logo.png" alt="img" height="120" width="300" style="margin-left:70px">
                             </a>
                         </div>
