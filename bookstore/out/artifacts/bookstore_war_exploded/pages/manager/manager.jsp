@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>About</title>
-	<%@ include file="/pages/common/css_img.jsp"%>
+	<title>后台管理</title>
 	<%@ include file="/pages/common/head.jsp"%>
 </head>
 <body class="about-page">
@@ -30,10 +29,10 @@
 				</div>
 				<div class="col-lg-7 col-sm-8 col-md-6 col-xs-5 col-ts-12">
 					<div class="block-search-block">
-							<div class="form-content">
-								<div class="inner"><br/><br/>
-									<font size=12>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;书籍是人类进步的阶梯</font>						</div>
-							</div>
+						<div class="form-content">
+							<div class="inner"><br/><br/>
+								<font size=12>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;书籍是人类进步的阶梯</font>						</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -137,57 +136,59 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-lg-3 col-md-4 col-sm-4">
-								<div class="teamo-iconbox  layout1">
-									<div class="iconbox-inner">
-										<div class="icon-item">
-											<span class="placeholder-text">01</span>
-											<span class="icon flaticon-rocket-ship"></span>
-										</div>
-										<div class="content">
-											<h4 class="title">
-												<a href="manager/bookServlet?action=page" class="teamo-menu-item-title" title="About">Books MANAGERMENT</a>
-											</h4>
-											<div class="text">
-												图书管理
+						<div style="text-align: center">
+							<div class="row">
+								<div class="col-lg-3 col-md-4 col-sm-4">
+									<div class="teamo-iconbox  layout1">
+										<div class="iconbox-inner">
+											<div class="icon-item">
+												<span class="placeholder-text">01</span>
+												<span class="icon flaticon-rocket-ship"></span>
+											</div>
+											<div class="content">
+												<h4 class="title">
+													<a href="manager/bookServlet?action=page" class="teamo-menu-item-title" title="About">Books MANAGERMENT</a>
+												</h4>
+												<div class="text">
+													图书管理
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-1">
-								<div class="teamo-iconbox  layout1">
-									<div class="iconbox-inner">
-										<div class="icon-item">
-											<span class="placeholder-text">03</span>
-											<span class="icon flaticon-padlock"></span>
-										</div>
-										<div class="content">
-											<h4 class="title">
-												<a href="order_manager.jsp" class="teamo-menu-item-title" title="About">ORDER MANAGERMENT</a>
-											</h4>
-											<div class="text">
-												订单管理
+								<div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-1">
+									<div class="teamo-iconbox  layout1">
+										<div class="iconbox-inner">
+											<div class="icon-item">
+												<span class="placeholder-text">03</span>
+												<span class="icon flaticon-padlock"></span>
+											</div>
+											<div class="content">
+												<h4 class="title">
+													<a href="pages/manager/order_manager.jsp" class="teamo-menu-item-title" title="About">ORDER MANAGERMENT</a>
+												</h4>
+												<div class="text">
+													订单管理
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-1">
-								<div class="teamo-iconbox  layout1">
-									<div class="iconbox-inner">
-										<div class="icon-item">
-											<span class="placeholder-text">02</span>
-											<span class="icon flaticon-return"></span>
-										</div>
-										<div class="content">
-											<h4 class="title">
-												<a href="../../index.jsp" class="teamo-menu-item-title" title="About">RETURN HOME</a>
-											</h4>
-											<div class="text">
-												返回主页
+								<div class="col-lg-3 col-md-4 col-sm-4 col-lg-offset-1">
+									<div class="teamo-iconbox  layout1">
+										<div class="iconbox-inner">
+											<div class="icon-item">
+												<span class="placeholder-text">02</span>
+												<span class="icon flaticon-return"></span>
+											</div>
+											<div class="content">
+												<h4 class="title">
+													<a href="index.jsp" class="teamo-menu-item-title" title="About">RETURN HOME</a>
+												</h4>
+												<div class="text">
+													返回主页
+												</div>
 											</div>
 										</div>
 									</div>
@@ -242,25 +243,6 @@
 <a href="#" class="backtotop">
 	<i class="fa fa-angle-double-up"></i>
 </a>
-<script src="pages/assets/js/jquery-1.12.4.min.js"></script>
-<script src="pages/assets/js/jquery.plugin-countdown.min.js"></script>
-<script src="pages/assets/js/jquery-countdown.min.js"></script>
-<script src="pages/assets/js/bootstrap.min.js"></script>
-<script src="pages/assets/js/owl.carousel.min.js"></script>
-<script src="pages/assets/js/magnific-popup.min.js"></script>
-<script src="pages/assets/js/isotope.min.js"></script>
-<script src="pages/assets/js/jquery.scrollbar.min.js"></script>
-<script src="pages/assets/js/jquery-ui.min.js"></script>
-<script src="pages/assets/js/mobile-menu.js"></script>
-<script src="pages/assets/js/chosen.min.js"></script>
-<script src="pages/assets/js/slick.js"></script>
-<script src="pages/assets/js/jquery.elevateZoom.min.js"></script>
-<script src="pages/assets/js/jquery.actual.min.js"></script>
-<script src="pages/assets/js/fancybox/source/jquery.fancybox.js"></script>
-<script src="pages/assets/js/lightbox.min.js"></script>
-<script src="pages/assets/js/owl.thumbs.min.js"></script>
-<script src="pages/assets/js/jquery.scrollbar.min.js"></script>
-<script src='https://ditu.google.cn/maps/api/js?key=AIzaSyC3nDHy1dARR-Pa_2jjPCjvsOR4bcILYsM'></script>
-<script src="pages/assets/js/frontend-plugin.js"></script>
+
 </body>
 </html>
