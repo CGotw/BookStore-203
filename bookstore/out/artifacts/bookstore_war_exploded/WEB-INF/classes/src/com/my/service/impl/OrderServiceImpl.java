@@ -10,6 +10,7 @@ import com.my.pojo.*;
 import com.my.service.OrderService;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 public class OrderServiceImpl implements OrderService {
@@ -48,5 +49,15 @@ public class OrderServiceImpl implements OrderService {
         cart.clear();
 
         return orderId;
+    }
+
+    @Override
+    public List<Order> queryOrders() {
+        return orderDao.queryOrders();
+    }
+
+    @Override
+    public List<Order> querOrdersByUser_id(Integer userId) {
+        return orderDao.queryOrdersByUser_id(userId);
     }
 }

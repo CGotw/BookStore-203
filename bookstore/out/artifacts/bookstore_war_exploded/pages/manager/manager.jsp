@@ -166,7 +166,7 @@
 											</div>
 											<div class="content">
 												<h4 class="title">
-													<a href="pages/manager/order_manager.jsp" class="teamo-menu-item-title" title="About">ORDER MANAGERMENT</a>
+													<a href="manager/orderServlet?action=listOrders" class="teamo-menu-item-title" title="About">ORDER MANAGERMENT</a>
 												</h4>
 												<div class="text">
 													订单管理

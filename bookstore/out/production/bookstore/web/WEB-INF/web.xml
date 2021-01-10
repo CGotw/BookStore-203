@@ -62,6 +62,15 @@
         <url-pattern>/orderServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ManagerOrderServlet</servlet-name>
+        <servlet-class>com.my.web.ManagerOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ManagerOrderServlet</servlet-name>
+        <url-pattern>/manager/orderServlet</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>ManagerFilter</filter-name>
         <filter-class>com.my.filter.ManagerFilter</filter-class>

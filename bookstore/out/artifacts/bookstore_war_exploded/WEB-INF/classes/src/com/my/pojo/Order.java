@@ -7,38 +7,38 @@ import java.util.Date;
  * 订单
  */
 public class Order {
-    private String orderId;
-    private Date createTime;
+    private String order_id;
+    private Date create_time;
     private BigDecimal price;
     // 0未发货，1已发货，2表示已签收
     private Integer status = 0;
-    private Integer userId;
+    private Integer user_id;
 
-    public Order(String orderId, Date createTime, BigDecimal price, Integer status, Integer userId) {
-        this.orderId = orderId;
-        this.createTime = createTime;
+    public Order(String order_id, Date create_time, BigDecimal price, Integer status, Integer user_id) {
+        this.order_id = order_id;
+        this.create_time = create_time;
         this.price = price;
         this.status = status;
-        this.userId = userId;
+        this.user_id = user_id;
     }
 
     public Order() {
     }
 
-    public String getOrderId() {
-        return orderId;
+    public String getOrder_id() {
+        return order_id;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
+    public void setOrder_id(String order_id) {
+        this.order_id = order_id;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Date create_time) {
+        this.create_time = create_time;
     }
 
     public BigDecimal getPrice() {
@@ -57,22 +57,22 @@ public class Order {
         this.status = status;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 
     @Override
     public String toString() {
         return "Order{" +
-                "orderId='" + orderId + '\'' +
-                ", createTime=" + createTime +
+                "order_id='" + order_id + '\'' +
+                ", create_time=" + create_time +
                 ", price=" + price +
                 ", status=" + status +
-                ", userId=" + userId +
+                ", user_id=" + user_id +
                 '}';
     }
 }
