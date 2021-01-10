@@ -84,7 +84,7 @@
 							</li>
 							<li class="menu-item">
 								<c:if test="${not empty sessionScope.user}">
-									<a href="pages/order/order.jsp" class="teamo-menu-item-title" title="New Arrivals">我的订单</a>
+									<a href="manager/orderServlet?action=listOrdersById" class="teamo-menu-item-title" title="New Arrivals">我的订单</a>
 								</c:if>
 							</li>
 							<li class="menu-item">
